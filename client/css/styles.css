@@ -1,0 +1,211 @@
+/* ---------- Global Theme ---------- */
+:root {
+  --bg:black;
+                 /* soft blue background */
+  --card-bg: #ffffff;
+  --accent: #2563eb;             /* blue accent */
+  --accent-hover: #1e4fcf;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --btn-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+}
+
+/* ---------- Landing Page Card ---------- */
+.landing-container {
+  width: 380px;
+  background: var(--card-bg);
+  padding: 36px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 100px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Headings ---------- */
+h1, h2 {
+  margin: 0 0 18px 0;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ---------- Inputs ---------- */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: var(--btn-radius);
+  border: 1px solid #d1d5db;
+  background: #f8fafc;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
+  background: #fff;
+  outline: none;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--btn-radius);
+  border: none;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.google-btn {
+  background: #ea4335;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.login-btn {
+  background: var(--accent);
+  color: #fff;
+  margin-top: 10px;
+}
+
+.logout-btn {
+  background: #111827;
+  color: #fff;
+  padding: 10px 18px;
+  width: auto;
+  border-radius: var(--btn-radius);
+}
+
+/* ---------- Error Message ---------- */
+.form-error {
+  color: var(--danger);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* ---------- Dashboard Container ---------- */
+.container {
+  max-width: 1100px;
+  background: var(--card-bg);
+  padding: 24px;
+  margin: 40px auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+header h1 {
+  font-size: 26px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* ---------- Panels ---------- */
+.panels {
+  display: flex;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.panel {
+  flex: 1;
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+}
+
+.panel h2 {
+  font-size: 20px;
+  color: var(--accent);
+}
+
+/* ---------- Stock Rows ---------- */
+.stock-row {
+  background: #fff;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: var(--btn-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s ease;
+}
+
+.stock-row:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* ---------- Subscribe / Unsubscribe Buttons ---------- */
+.btn-sub {
+  background: var(--success);
+  color: white;
+}
+
+.btn-unsub {
+  background: var(--danger);
+  color: white;
+}
+
+/* ---------- Price + Sparkline ---------- */
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stock-row canvas {
+  border-radius: 6px;
+  background: rgba(0,0,0,0.05);
+}
+
+/* ---------- Utility ---------- */
+.small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.hidden {
+  display: none;
+}

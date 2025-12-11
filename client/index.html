@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>StockDashboard — Welcome</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #00c6ff, #0072ff, #00b09b, #96c93d, #00e3ae);
+; margin:0; height:100vh; display:flex; align-items:center; justify-content:center; }
+    .card { background:#fff; padding:36px; border-radius:12px; width:360px; text-align:center; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+    h2 { margin:0 0 20px; color:#222; }
+    .google-btn { background:#4285F4; color:#fff; border:none; padding:12px 16px; width:100%; border-radius:8px; font-size:16px; cursor:pointer; }
+    .small { margin-top:12px; color:#666; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+  <h2>Welcome to Stock Broker</h2>
+
+  <a href="/api/auth/google">
+    <button class="google-btn">Continue with Google</button>
+  </a>
+</div>
+
+
+  
+
+  <script>
+    // If Google redirected back with #token=..., store token and redirect to dashboard
+    (function captureTokenFromHash() {
+      if (location.hash && location.hash.includes('token=')) {
+        const hash = location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const token = params.get('token');
+        if (token) {
+          localStorage.setItem('token', token);
+          // Clean URL and redirect to dashboard
+          history.replaceState(null, '', location.pathname + location.search);
+          window.location.href = '/dashboard.html';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

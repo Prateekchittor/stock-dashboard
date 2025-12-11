@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Sign in — StockDashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sign in</h1>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input id="email" type="email" required placeholder="you@example.com" />
+      <label for="password">Password</label>
+      <input id="password" type="password" required placeholder="Your password" />
+      <button type="submit">Sign in</button>
+    </form>
+
+    <p id="error" class="small" style="color: #b00020; display:none;"></p>
+
+    <p style="margin-top:12px;">
+      New here? <a href="/signup.html">Create an account</a> or <a href="/">Sign in with Google</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errEl = document.getElementById('error');
+      errEl.style.display = 'none';
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => null);
+          const msg = data && data.error ? data.error : `Login failed: ${res.status}`;
+          errEl.textContent = msg;
+          errEl.style.display = 'block';
+          return;
+        }
+        const data = await res.json();
+        localStorage.setItem('token', data.token);
+        window.location.href = '/dashboard.html';
+      } catch (err) {
+        console.error('Network/login error', err);
+        errEl.textContent = 'Network error';
+        errEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
