@@ -54,6 +54,49 @@ Backend
 7.UI updates price, time, and trend graph in real time
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Database
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The application uses MongoDB Atlas as the primary database for storing user and subscription data.
+
+   Database Usage
+------------------------
+
+1.Each authenticated user is stored as a document in MongoDB.
+
+2.User records include:
+       - Google account email
+       - List of subscribed stock tickers
+       - Metadata such as creation timestamp
+
+3.No passwords are stored, as authentication is handled exclusively through Google OAuth.
+
+Q ]  Why MongoDB ? 
+------------------------
+1.Flexible schema makes it easy to extend user data in the future.
+
+2.Well-suited for user-centric, document-based data models.
+
+3.Integrates seamlessly with Node.js using Mongoose.
+
+4.Scales horizontally and works reliably with cloud deployments.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ # Deployment
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.This application is deployed using Render for the backend and web service hosting.
+
+2.The Node.js server is hosted on Render as a web service.
+
+3.Environment variables are securely managed through Render’s dashboard.
+
+4.The application automatically redeploys on every push to the connected Git repository.
+
+5.Google OAuth callback URLs are configured to match the Render deployment domain.
+
+6.MongoDB Atlas is used as the managed database service.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Security Notes
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -64,6 +107,7 @@ Backend
 3.No passwords are stored in the database
 
 4.WebSocket connections are authenticated
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Learning Objectives
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
