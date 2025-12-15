@@ -21,20 +21,20 @@ This project demonstrates real-time systems, WebSockets, authentication, and fro
 # Tech Stack
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Frontend
-   HTML5
-   CSS3
-   Vanilla JavaScript
-   Canvas API (for sparkline graphs)
+Frontend :
+   -HTML5
+   -CSS3
+   -Vanilla JavaScript
+   -Canvas API (for sparkline graphs)
 
-Backend
-   Node.js
-   Express.js
-   Socket.IO
-   MongoDB Atlas
-   Mongoose
-   Passport.js (Google OAuth)
-   JWT Authentication
+Backend :
+   -Node.js
+   -Express.js
+   -Socket.IO
+   -MongoDB Atlas
+   -Mongoose
+   -Passport.js (Google OAuth)
+   -JWT Authentication
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Application Flow
