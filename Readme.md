@@ -52,3 +52,32 @@ Backend
 6.Socket.IO sends updates only to subscribed users
 
 7.UI updates price, time, and trend graph in real time
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Security Notes
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.Authentication is handled by Google OAuth
+
+2.JWT is used for API and WebSocket authentication
+
+3.No passwords are stored in the database
+
+4.WebSocket connections are authenticated
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Learning Objectives
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.This project demonstrates:
+
+2.Real-time data streaming
+
+3.WebSocket communication
+
+4.OAuth-based authentication
+
+5.Frontend state management
+
+6.Data visualization without external libraries
+
+7.Scalable backend design patterns
