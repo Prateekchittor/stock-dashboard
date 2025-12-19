@@ -112,16 +112,15 @@ Q ]  Why MongoDB ?
 Learning Objectives
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-1.This project demonstrates:
+This project demonstrates:
+1.Real-time data streaming
 
-2.Real-time data streaming
+2.WebSocket communication
 
-3.WebSocket communication
+3.OAuth-based authentication
 
-4.OAuth-based authentication
+4.Frontend state management
 
-5.Frontend state management
+5.Data visualization without external libraries
 
-6.Data visualization without external libraries
-
-7.Scalable backend design patterns
+6.Scalable backend design patterns
