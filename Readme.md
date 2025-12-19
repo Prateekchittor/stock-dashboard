@@ -1,4 +1,4 @@
-                                                                Stock Broker Client Dashboard
+                                                     Stock Broker Client Dashboard
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 A real-time stock dashboard web application that allows users to log in using Google OAuth, subscribe to stocks, and view live price updates with visual trend graphs.
 This project demonstrates real-time systems, WebSockets, authentication, and frontend UI design using modern web technologies.
